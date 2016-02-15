@@ -1,0 +1,20 @@
+game_2
+"search goal"
+
+2016.2.10
+2016.2.13
+
+Yusuke Kato
+
+Let' go!!
+
+'mouse_left_button':game start
+
+'w':up
+'s':down
+'d':right
+'a':left
+
+Get yellow symbol.
+
+Let's go goal.
