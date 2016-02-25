@@ -1,4 +1,4 @@
-/*game2*/
+/*game_2*/
 /*search_goal*/
 /*YusukeKato*/
 /*2016.2.10*/
@@ -11,13 +11,13 @@
 #define PI 3.14159265
 
 /*position_hero*/
-static GLfloat x=0,y=-2.5;
+static GLdouble x=0,y=-2.5;
 /*color*/
-static GLfloat r1=1.0,g1=1.0,b1=0.0;
-static GLfloat r2=1.0,g2=1.0,b2=0.0;
-static GLfloat r3=1.0,g3=1.0,b3=0.0;
-static GLfloat r4=1.0,g4=1.0,b4=0.0;
-static GLfloat r5=1.0,g5=1.0,b5=0.0;
+static GLdouble r1=1.0,g1=1.0,b1=0.0;
+static GLdouble r2=1.0,g2=1.0,b2=0.0;
+static GLdouble r3=1.0,g3=1.0,b3=0.0;
+static GLdouble r4=1.0,g4=1.0,b4=0.0;
+static GLdouble r5=1.0,g5=1.0,b5=0.0;
 /*flag*/
 static GLint fg=0,fg2=0;
 static GLint flg1=0,flg2=0,flg3=0,flg4=0,flg5=0;
@@ -27,33 +27,33 @@ static GLint flag=0,flag1=0,flag2=0;
 static GLint sym1=0,sym2=0,sym3=0,sym4=0,sym5=0;
 static GLint i=0;
 /*enemy1*/
-static GLfloat x1=7.5,y1=0.0;
+static GLdouble x1=7.5,y1=0.0;
 /*enemy2*/
-static GLfloat x2=-27.5,y2=-27.5;
+static GLdouble x2=-27.5,y2=-27.5;
 /*enemy3*/
-static GLfloat x3=-32.5,y3=0.0;
+static GLdouble x3=-32.5,y3=0.0;
 /*enemy4*/
-static GLfloat x4=12.5,y4=-12.5;
+static GLdouble x4=12.5,y4=-12.5;
 /*enemy5*/
-static GLfloat x5=27.5,y5=-7.5;
+static GLdouble x5=27.5,y5=-7.5;
 /*enemy6*/
-static GLfloat x6=32.5,y6=20;
+static GLdouble x6=32.5,y6=20;
 /*enemy7*/
-static GLfloat x7=20,y7=-32.5;
+static GLdouble x7=20,y7=-32.5;
 /*enemy8*/
-static GLfloat x8=7.5,y8=2.5;
+static GLdouble x8=7.5,y8=2.5;
 /*enemy9*/
-static GLfloat x9=-2.5,y9=22.5;
+static GLdouble x9=-2.5,y9=22.5;
 /*enemy10*/
-static GLfloat x10=-27.5,y10=7.5;
+static GLdouble x10=-27.5,y10=7.5;
 /*enemy11*/
-static GLfloat x11=-25,y11=25;
+static GLdouble x11=-25,y11=25;
 /*enemy12*/
-static GLfloat x12=7.5,y12=27.5;
+static GLdouble x12=7.5,y12=27.5;
 /*enemy13*/
-static GLfloat x13=-300,y13=20;
+static GLdouble x13=-300,y13=20;
 /*enemy14*/
-static GLfloat x14=27.5,y14=27.5;
+static GLdouble x14=27.5,y14=27.5;
 
 void display(void)
 {	
@@ -486,10 +486,10 @@ void display(void)
 void simu(void)
 {
 		/*conditions_collision*/
-		if(y<-29) fg = 1;
-		if(y>29&&x<25) fg = 2;
-		if(x>29) fg = 3;
-		if(x<-29) fg = 4;
+		if(y<-29&&y>-31&&x>-31) fg = 1;
+		if(y>29&&y<31&&x<25&&x>-31) fg = 2;
+		if(x>29&&x<31) fg = 3;
+		if(x<-29&&x>-31&&y<31) fg = 4;
 		//from left, from up
 		//line_beside
 		if(x>=-30&&x<=-20&&y>-6&&y<=-5) fg=5;
@@ -1595,6 +1595,11 @@ void simu(void)
 			printf("\n\n\t!!!!!GAME CREAR!!!!!\n\n");
 			exit(0);
 		}
+	}
+	if(x>-40&&x<-30&&y>-40&&y<-30)
+	{
+		printf("\n\n\t!!!!!yattane!!!!!\n\n");
+		exit(0);
 	}
 	/******************/
 	
